@@ -6,6 +6,23 @@
 
 ---
 
+## ⚠️ Important: Deployment Strategy
+
+**Deploy ONCE at end of day only!**
+- Bundle all changes together
+- Test locally with `npm run build` throughout day
+- Commit after each task
+- **Single deployment** at very end with all improvements
+- **Why:** Conserve Netlify credits (used 164.9 today)
+
+**Local testing:**
+```bash
+npm run build  # Test production build
+npm run dev    # Quick development server
+```
+
+---
+
 ## 🎯 Sprint Goals
 
 1. Add mechanisms to collect user feedback
