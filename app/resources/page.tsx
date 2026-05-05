@@ -125,7 +125,7 @@ const resources: Resource[] = [
     title: 'AI Safety from Anthropic',
     description: 'Research and insights on building safe AI systems',
     type: 'article',
-    url: 'https://www.anthropic.com/safety',
+    url: 'https://www.anthropic.com/research',
     category: 'reading',
     icon: '🔬',
   },
@@ -134,7 +134,7 @@ const resources: Resource[] = [
     title: 'Common Sense Media: AI Guide',
     description: 'Age ratings and guidance for AI tools and apps',
     type: 'article',
-    url: 'https://www.commonsensemedia.org/articles/parents-guide-to-ai',
+    url: 'https://www.commonsensemedia.org/ai',
     category: 'reading',
     icon: '👪',
   },
@@ -143,7 +143,7 @@ const resources: Resource[] = [
     title: 'BBC: AI Explained',
     description: 'Accessible articles explaining AI concepts',
     type: 'article',
-    url: 'https://www.bbc.co.uk/news/topics/ce1qrvlegnyt',
+    url: 'https://www.bbc.co.uk/news/topics/ce1qrvleleqt',
     category: 'reading',
     icon: '📰',
   },
@@ -284,31 +284,6 @@ export default function ResourcesPage() {
             </section>
           );
         })}
-
-        {/* Note about PDFs */}
-        <div className="max-w-3xl mx-auto mt-16 p-6 md:p-8 bg-yellow-50 border border-yellow-200 rounded-xl">
-          <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
-            <span>⚠️</span>
-            <span>Note About Downloadable Resources</span>
-          </h3>
-          <p className="text-gray-700 mb-3">
-            PDF downloads are currently placeholders. The actual PDF files will be created and added soon.
-            In the meantime, all the learning content is available in the video modules above!
-          </p>
-          <p className="text-gray-700">
-            Want to help? If you have expertise in creating educational materials, we'd love your contribution.
-            Contact us through{' '}
-            <a
-              href="https://theaiark.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline font-medium"
-            >
-              The AI Ark
-            </a>
-            .
-          </p>
-        </div>
 
         {/* CTA Section */}
         <div className="max-w-3xl mx-auto mt-12 bg-gradient-to-br from-primary to-secondary text-white rounded-2xl p-8 md:p-12 text-center">
