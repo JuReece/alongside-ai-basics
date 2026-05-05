@@ -158,18 +158,19 @@ function PlaygroundContent() {
         {/* API Key Input */}
         {showApiKeyInput && (
           <div className="mb-6 p-6 bg-white rounded-xl border border-gray-200 shadow-sm">
-            <h3 className="text-lg font-semibold mb-2">Claude API Key</h3>
+            <h3 className="text-lg font-semibold mb-2">Your Claude API Key</h3>
             <p className="text-sm text-gray-600 mb-4">
-              Get your free API key from{' '}
+              To use the Playground, you'll need your own free Claude API key. Don't worry - it's straightforward!
+              Visit{' '}
               <a
                 href="https://console.anthropic.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
+                className="text-primary hover:underline font-medium"
               >
                 console.anthropic.com
               </a>
-              . It's stored locally in your browser only.
+              , create a free account, and copy your API key. Your key is stored locally in your browser only - we never see it.
             </p>
             <div className="flex gap-2">
               <input
@@ -198,13 +199,95 @@ function PlaygroundContent() {
             <h2 className="text-3xl font-bold mb-4">Welcome to the AI Playground</h2>
             <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
               {apiKey
-                ? 'Start a conversation with Claude AI. Try one of our pre-made prompts or write your own!'
-                : 'Add your Claude API key to get started. Your key is stored locally and never sent to our servers.'}
+                ? 'Brilliant! You\'re all set. Have a chat with Claude AI below - try one of our prompts from the library, or write your own question.'
+                : 'This is your safe space to practise using AI. To get started, you\'ll need to add your own Claude API key (it\'s free and takes 2 minutes).'}
             </p>
+
+            {/* How it Works - Only show when no API key */}
+            {!apiKey && (
+              <div className="max-w-3xl mx-auto mb-8 bg-white rounded-xl p-6 border border-gray-200 text-left">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <span>💡</span>
+                  <span>How the Playground Works</span>
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</div>
+                    <div>
+                      <h4 className="font-semibold mb-1">Get Your Free API Key</h4>
+                      <p className="text-sm text-gray-600">
+                        Visit <a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">console.anthropic.com</a> and create a free account.
+                        You'll get £5 of free credit to start - that's about 100+ conversations!
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">2</div>
+                    <div>
+                      <h4 className="font-semibold mb-1">Add Your Key Here</h4>
+                      <p className="text-sm text-gray-600">
+                        Click the button below, paste your API key, and save it. It stays in your browser only -
+                        we never see it or send it to our servers.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">3</div>
+                    <div>
+                      <h4 className="font-semibold mb-1">Start Chatting!</h4>
+                      <p className="text-sm text-gray-600">
+                        Type your question or try a prompt from our library. Claude will respond just like a helpful
+                        assistant. Perfect for practising before using AI elsewhere.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Quick Tips - Only show when API key is set */}
+            {apiKey && (
+              <div className="max-w-3xl mx-auto mb-8 bg-white rounded-xl p-6 border border-gray-200 text-left">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <span>✨</span>
+                  <span>Quick Tips for Better Responses</span>
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    <div>
+                      <p className="font-medium text-sm">Be specific</p>
+                      <p className="text-xs text-gray-600">"Help me plan a dinner for 4" → "Suggest a 30-minute vegetarian dinner for 4, budget £15"</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    <div>
+                      <p className="font-medium text-sm">Give context</p>
+                      <p className="text-xs text-gray-600">Let Claude know who you are and what you need - it helps!</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    <div>
+                      <p className="font-medium text-sm">Ask follow-ups</p>
+                      <p className="text-xs text-gray-600">Not quite right? Just ask Claude to adjust or explain more</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    <div>
+                      <p className="font-medium text-sm">Stay safe</p>
+                      <p className="text-xs text-gray-600">Never share personal details like addresses or phone numbers</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               {!apiKey ? (
                 <Button onClick={() => setShowApiKeyInput(true)} variant="default" size="lg">
-                  Add API Key to Start
+                  Get Started - Add Your API Key
                 </Button>
               ) : (
                 <>
@@ -239,7 +322,7 @@ function PlaygroundContent() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary font-bold mt-0.5">•</span>
-                  <span>Always fact-check important information - AI can make mistakes</span>
+                  <span>Always double-check important information - AI can make mistakes</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary font-bold mt-0.5">•</span>
@@ -306,7 +389,7 @@ function PlaygroundContent() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Type your message... (Shift+Enter for new line, Enter to send)"
+                placeholder="Ask me anything! Try: 'Help me plan a family activity for this weekend' or 'Explain how AI works in simple terms'"
                 className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
                 rows={3}
                 disabled={isLoading}
