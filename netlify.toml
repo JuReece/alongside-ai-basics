@@ -4,11 +4,3 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-[build.environment]
-  NEXT_TELEMETRY_DISABLED = "1"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
