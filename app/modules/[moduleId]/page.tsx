@@ -9,8 +9,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { moduleId: string } }) {
-  const module = getModuleById(params.moduleId);
+export async function generateMetadata({ params }: { params: Promise<{ moduleId: string }> }) {
+  const { moduleId } = await params;
+  const module = getModuleById(moduleId);
   if (!module) return {};
 
   return {
@@ -19,8 +20,9 @@ export async function generateMetadata({ params }: { params: { moduleId: string 
   };
 }
 
-export default function ModulePage({ params }: { params: { moduleId: string } }) {
-  const module = getModuleById(params.moduleId);
+export default async function ModulePage({ params }: { params: Promise<{ moduleId: string }> }) {
+  const { moduleId } = await params;
+  const module = getModuleById(moduleId);
 
   if (!module) {
     notFound();
