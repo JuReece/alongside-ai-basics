@@ -158,19 +158,62 @@ function PlaygroundContent() {
         {/* API Key Input */}
         {showApiKeyInput && (
           <div className="mb-6 p-6 bg-white rounded-xl border border-gray-200 shadow-sm">
-            <h3 className="text-lg font-semibold mb-2">Your Claude API Key</h3>
-            <p className="text-sm text-gray-600 mb-4">
-              To use the Playground, you'll need your own free Claude API key. Don't worry - it's straightforward!
-              Visit{' '}
-              <a
-                href="https://console.anthropic.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline font-medium"
-              >
-                console.anthropic.com
-              </a>
-              , create a free account, and copy your API key. Your key is stored locally in your browser only - we never see it.
+            <h3 className="text-lg font-semibold mb-3">Getting Your Free Claude API Key</h3>
+
+            <div className="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+              <p className="text-sm font-medium text-blue-900 mb-2">
+                📖 <strong>What's an API key?</strong>
+              </p>
+              <p className="text-sm text-blue-800">
+                Think of it like a library card - it lets you access Claude AI's services. You get £5 of free credit when you sign up, which is enough for about 100 conversations. It's completely free to get started!
+              </p>
+            </div>
+
+            <div className="mb-4">
+              <p className="text-sm font-semibold text-gray-900 mb-3">Here's how to get yours (takes 2 minutes):</p>
+              <ol className="text-sm text-gray-700 space-y-2 ml-4">
+                <li className="flex items-start gap-2">
+                  <span className="font-bold text-primary">1.</span>
+                  <span>
+                    Visit{' '}
+                    <a
+                      href="https://console.anthropic.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline font-medium"
+                    >
+                      console.anthropic.com
+                    </a>
+                    {' '}and click "Sign Up" (it's free!)
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="font-bold text-primary">2.</span>
+                  <span>Create your account using your email address</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="font-bold text-primary">3.</span>
+                  <span>Once logged in, click "Get API Keys" or look for "API Keys" in the menu</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="font-bold text-primary">4.</span>
+                  <span>Click "Create Key", give it a name (like "Playground"), and copy the long code that starts with "sk-ant-"</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="font-bold text-primary">5.</span>
+                  <span>Paste it in the box below and click Save</span>
+                </li>
+              </ol>
+            </div>
+
+            <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+              <p className="text-xs text-green-800">
+                <strong>🔒 Your privacy:</strong> Your API key stays on your device only. We never see it, store it, or send it to our servers. It's completely safe.
+              </p>
+            </div>
+
+            <p className="text-xs text-gray-600 mb-3 font-medium">
+              Paste your API key here (it will look like: sk-ant-api03-xxxxx...):
             </p>
             <div className="flex gap-2">
               <input
@@ -203,31 +246,63 @@ function PlaygroundContent() {
                 : 'This is your safe space to practise using AI. To get started, you\'ll need to add your own Claude API key (it\'s free and takes 2 minutes).'}
             </p>
 
-            {/* How it Works - Only show when no API key */}
+            {/* What is the Playground - Only show when no API key */}
             {!apiKey && (
               <div className="max-w-3xl mx-auto mb-8 bg-white rounded-xl p-6 border border-gray-200 text-left">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                  <span>💡</span>
-                  <span>How the Playground Works</span>
+                  <span>🎮</span>
+                  <span>What is the Playground?</span>
                 </h3>
+                <p className="text-gray-700 mb-4">
+                  The Playground is your safe space to practise chatting with AI before you use it for real tasks.
+                  Think of it like a practice area where you can:
+                </p>
+                <ul className="space-y-2 text-sm text-gray-700 mb-6">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold mt-0.5">•</span>
+                    <span><strong>Try out prompts</strong> from our library without any pressure</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold mt-0.5">•</span>
+                    <span><strong>Learn by doing</strong> - ask questions and see how AI responds</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold mt-0.5">•</span>
+                    <span><strong>Make mistakes safely</strong> - it's just practice, so experiment freely!</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold mt-0.5">•</span>
+                    <span><strong>Build confidence</strong> before using AI for actual family tasks</span>
+                  </li>
+                </ul>
+
+                <div className="bg-sage-light/20 border border-sage-light rounded-lg p-4 mb-4">
+                  <p className="text-sm font-semibold text-gray-900 mb-2">💭 New to AI? That's brilliant!</p>
+                  <p className="text-sm text-gray-700">
+                    You don't need any technical experience. If you can send a text message, you can use this.
+                    We'll guide you through every step, starting with getting your free access below.
+                  </p>
+                </div>
+
+                <h4 className="font-semibold mb-3 text-gray-900">Here's how it works (3 simple steps):</h4>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</div>
                     <div>
-                      <h4 className="font-semibold mb-1">Get Your Free API Key</h4>
+                      <h4 className="font-semibold mb-1">Get Your Free Access (API Key)</h4>
                       <p className="text-sm text-gray-600">
-                        Visit <a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">console.anthropic.com</a> and create a free account.
-                        You'll get £5 of free credit to start - that's about 100+ conversations!
+                        An API key is like a password that lets you use Claude AI. You'll get one free from Anthropic (the company that makes Claude).
+                        It comes with £5 credit - that's enough for about 100 practice conversations!
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">2</div>
                     <div>
-                      <h4 className="font-semibold mb-1">Add Your Key Here</h4>
+                      <h4 className="font-semibold mb-1">Add It Here (Completely Safe)</h4>
                       <p className="text-sm text-gray-600">
-                        Click the button below, paste your API key, and save it. It stays in your browser only -
-                        we never see it or send it to our servers.
+                        Click the button below and follow the step-by-step instructions to get your key.
+                        Then paste it in the box and click Save. It stays on your device only - we never see it.
                       </p>
                     </div>
                   </div>
@@ -236,8 +311,8 @@ function PlaygroundContent() {
                     <div>
                       <h4 className="font-semibold mb-1">Start Chatting!</h4>
                       <p className="text-sm text-gray-600">
-                        Type your question or try a prompt from our library. Claude will respond just like a helpful
-                        assistant. Perfect for practising before using AI elsewhere.
+                        Type your question in the box at the bottom and press Enter. Claude will respond just like you're texting a very knowledgeable friend.
+                        Try asking simple things first like "Explain what AI is in simple terms" or "Help me plan dinner for tonight".
                       </p>
                     </div>
                   </div>
