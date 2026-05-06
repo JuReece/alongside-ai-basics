@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { GlobalSearch } from './GlobalSearch';
 
 export function Header() {
   return (
@@ -42,6 +45,7 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-4">
+          <GlobalSearch />
           <a
             href="https://theaiark.org"
             target="_blank"

@@ -1,6 +1,7 @@
 import { modules, getModuleById } from '@/data/modules';
 import { VideoPlayer } from '@/components/VideoPlayer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { LessonRating } from '@/components/LessonRating';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
@@ -108,6 +109,9 @@ export default async function ModulePage({ params }: { params: Promise<{ moduleI
                   </ul>
                 </div>
               )}
+
+              {/* Lesson Rating */}
+              <LessonRating moduleId={module.id} lessonId={lesson.id} />
             </div>
           ))}
         </div>

@@ -13,13 +13,22 @@ function NewsletterForm() {
     setStatus('loading');
 
     try {
-      // TODO: Add your Resend API endpoint here
-      // For now, just show success message
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
-      setStatus('success');
-      setMessage('Thanks for subscribing!');
-      setEmail('');
-      setTimeout(() => setStatus('idle'), 3000);
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus('success');
+        setMessage(data.message || 'Thanks for subscribing!');
+        setEmail('');
+        setTimeout(() => setStatus('idle'), 3000);
+      } else {
+        throw new Error(data.error || 'Failed to subscribe');
+      }
     } catch (error) {
       setStatus('error');
       setMessage('Something went wrong. Please try again.');
