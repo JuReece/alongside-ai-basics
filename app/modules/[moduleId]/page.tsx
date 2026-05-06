@@ -116,20 +116,20 @@ export default async function ModulePage({ params }: { params: Promise<{ moduleI
         <div className="mt-8 p-6 md:p-8 bg-gradient-to-br from-primary to-secondary text-white rounded-xl text-center">
           <h3 className="text-2xl font-bold mb-3">🎉 Module Complete!</h3>
           <p className="text-lg text-white/90 mb-6">
-            Great work! Ready to continue your learning journey?
+            Great work! Ready to put what you've learned into practice?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/"
+              href="/practice"
               className="inline-block bg-white text-primary py-3 px-6 rounded-lg font-semibold hover:bg-background transition"
             >
-              Back to All Modules
+              Practice What You've Learned →
             </Link>
             <Link
-              href="/prompts"
+              href="/"
               className="inline-block border-2 border-white text-white py-3 px-6 rounded-lg font-semibold hover:bg-white/10 transition"
             >
-              Try Some Prompts
+              Back to All Modules
             </Link>
           </div>
         </div>

@@ -21,14 +21,14 @@ export default function PromptsPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Prompt Library</h1>
             <p className="text-xl text-white/90 mb-6">
-              {prompts.length}+ ready-to-use AI prompts for everyday family life. Just copy, customize, and use!
+              {prompts.length}+ ready-to-use AI prompts for everyday family life. Just copy, customize, and try them with free AI tools!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/playground"
+                href="/practice"
                 className="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-background transition"
               >
-                Try in Playground →
+                How to Use These →
               </Link>
               <Link
                 href="/"

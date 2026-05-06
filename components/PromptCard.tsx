@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Prompt } from '@/data/prompts';
 import { Button } from '@/components/ui/Button';
-import Link from 'next/link';
 
 interface PromptCardProps {
   prompt: Prompt;
@@ -89,14 +88,16 @@ export function PromptCard({ prompt }: PromptCardProps) {
         >
           {copied ? '✓ Copied!' : '📋 Copy Prompt'}
         </Button>
-        <Link
-          href={`/playground?prompt=${encodeURIComponent(prompt.id)}`}
+        <a
+          href="https://claude.ai"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex-1"
         >
           <Button variant="outline" size="sm" className="w-full">
-            Try Now →
+            Try at Claude.ai →
           </Button>
-        </Link>
+        </a>
       </div>
     </div>
   );

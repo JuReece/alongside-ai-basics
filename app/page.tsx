@@ -24,7 +24,7 @@ export default function HomePage() {
           </h1>
           <p className="text-xl text-gray-600 mb-8">
             Free comprehensive courses teaching families how to use AI in everyday life.
-            No jargon, just practical skills and safety-first approach.
+            Learn here, practice anywhere with free AI tools. No jargon, just practical skills.
           </p>
 
           <div className="flex items-center justify-center gap-8 text-sm text-gray-600 mb-8">
@@ -88,9 +88,9 @@ export default function HomePage() {
 
             <div className="text-center">
               <div className="text-4xl mb-4">⚡</div>
-              <h3 className="text-xl font-semibold mb-2">Interactive Practice</h3>
+              <h3 className="text-xl font-semibold mb-2">Ready-to-Use Prompts</h3>
               <p className="text-gray-600">
-                100+ ready-to-use prompts and a safe AI playground to practice
+                40+ prompts you can try with free AI tools like Claude.ai or ChatGPT
               </p>
             </div>
 
@@ -103,12 +103,18 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/prompts"
               className="inline-block bg-gradient-to-r from-primary to-teal text-white px-8 py-4 rounded-lg font-semibold hover:from-primary-dark hover:to-primary transition"
             >
               Explore Prompt Library →
+            </Link>
+            <Link
+              href="/practice"
+              className="inline-block bg-sage text-white px-8 py-4 rounded-lg font-semibold hover:bg-sage/90 transition"
+            >
+              How to Practice →
             </Link>
           </div>
         </div>
@@ -131,10 +137,10 @@ export default function HomePage() {
               Start with AI Basics
             </Link>
             <Link
-              href="/playground"
+              href="/practice"
               className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition"
             >
-              Try the Playground
+              Learn How to Practice
             </Link>
           </div>
         </div>

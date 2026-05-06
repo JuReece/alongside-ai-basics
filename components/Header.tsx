@@ -27,10 +27,10 @@ export function Header() {
               Prompt Library
             </Link>
             <Link
-              href="/playground"
+              href="/practice"
               className="text-secondary hover:text-primary transition"
             >
-              Playground
+              Practice Guide
             </Link>
             <Link
               href="/resources"
@@ -61,8 +61,8 @@ export function Header() {
         <Link href="/prompts" className="text-sm whitespace-nowrap">
           Prompts
         </Link>
-        <Link href="/playground" className="text-sm whitespace-nowrap">
-          Playground
+        <Link href="/practice" className="text-sm whitespace-nowrap">
+          Practice
         </Link>
         <Link href="/resources" className="text-sm whitespace-nowrap">
           Resources
