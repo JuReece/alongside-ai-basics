@@ -1,5 +1,6 @@
 import { modules, getModuleById } from '@/data/modules';
 import { VideoPlayer } from '@/components/VideoPlayer';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
@@ -32,13 +33,12 @@ export default async function ModulePage({ params }: { params: Promise<{ moduleI
     <div className="bg-background min-h-screen">
       <div className="max-w-5xl mx-auto py-8 px-4">
         {/* Breadcrumb */}
-        <nav className="text-sm text-gray-600 mb-6">
-          <Link href="/" className="hover:text-primary">
-            Home
-          </Link>
-          <span className="mx-2">/</span>
-          <span>{module.title}</span>
-        </nav>
+        <Breadcrumbs
+          items={[
+            { label: 'Home', href: '/' },
+            { label: module.title },
+          ]}
+        />
 
         {/* Module Header */}
         <div className="bg-white rounded-xl p-6 md:p-8 mb-8 shadow-sm">
