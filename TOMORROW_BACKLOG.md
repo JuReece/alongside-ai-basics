@@ -278,18 +278,85 @@ git config --global user.email "judith@reeceadvisory.com"
 
 ---
 
+## 🔮 Future Strategic Initiative: Integration with AlongsideSEND
+
+**Context:** Decision made in separate conversation (majk://conversations/f9ef0737-1e7b-4c29-a276-a6102ab14cbf)
+
+**The Plan:**
+Instead of maintaining AI Basics as a standalone site, integrate it as a section of alongsidesend.co.uk with links pointing to theaiark.org for hands-on practice exercises.
+
+**Why AlongsideSEND:**
+- SEND parents are often seeking educational resources
+- Natural fit with educational mission
+- Already on Netlify/GitHub under your control
+- Avoids maintaining 3+ separate websites
+
+**Proposed Structure:**
+```
+alongsidesend.co.uk/
+├── [existing SEND support content]
+├── /ai-basics/                    ← New section (copy from this site)
+│   ├── /getting-started
+│   ├── /modules
+│   ├── /prompts
+│   ├── /playground
+│   └── /resources
+│   └── [prominent CTA to theaiark.org for practice]
+```
+
+**Complexity: LOW-MEDIUM**
+- **Effort:** 2-4 hours (mostly content migration)
+- **Technical:** Very simple - just copy HTML/assets to AlongsideSEND repo
+- **AlongsideSEND is static HTML** - no build process complexity
+- **Netlify impact:** Zero - same free tier, just more files
+
+**Implementation Steps:**
+1. Create `/ai-basics/` folder in AlongsideSEND-website repo
+2. Adapt Next.js pages to static HTML (or keep Next.js and deploy as separate folder)
+3. Update navigation in AlongsideSEND main site
+4. Add prominent "Practice at TheAIARK.org" CTAs throughout
+5. Update any absolute URLs to work with new path
+6. Test on Netlify staging
+7. Deploy to production
+8. Optionally: Redirect alongside-ai-basics.netlify.app → alongsidesend.co.uk/ai-basics/
+
+**Benefits:**
+- ✅ Single domain to maintain (alongsidesend.co.uk)
+- ✅ Better brand coherence (both "Alongside" products)
+- ✅ Natural audience fit (parents seeking AI education)
+- ✅ Consolidates web presence
+- ✅ Saves Netlify deployment credits
+
+**Risks/Considerations:**
+- Need to test if AlongsideSEND can handle Next.js or if we convert to static HTML
+- May need to update AlongsideSEND branding to accommodate AI Basics
+- Need clear navigation so users understand both offerings
+- Should update this backlog AFTER initial feedback from team (Ang, Natasha, Lottie)
+
+**When to Do This:**
+- AFTER collecting team feedback on current standalone site
+- AFTER video content is complete
+- AFTER initial user testing shows the concept works
+- Probably a 1-2 day project, not part of tomorrow's sprint
+
+**Alternative Approach:**
+Keep both sites running initially, then migrate once AI Basics is proven successful.
+
+---
+
 ## 🚫 Explicitly Out of Scope Tomorrow
 
 These are HIGH value but need more time or information:
 
 1. **Video Content** - You're handling offline
-2. **User Accounts** - Too big for 3 hours
-3. **Quiz Features** - Too big for 3 hours
-4. **Community Forum** - Way too big
-5. **Multilingual Support** - Future phase
-6. **Mobile App** - Not needed
-7. **Certificate Generation** - Nice but not critical
-8. **Full Accessibility Audit** - Needs dedicated time
+2. **Integration with AlongsideSEND** - Strategic decision, needs 2-4 hours (see above)
+3. **User Accounts** - Too big for 3 hours
+4. **Quiz Features** - Too big for 3 hours
+5. **Community Forum** - Way too big
+6. **Multilingual Support** - Future phase
+7. **Mobile App** - Not needed
+8. **Certificate Generation** - Nice but not critical
+9. **Full Accessibility Audit** - Needs dedicated time
 
 ---
 
